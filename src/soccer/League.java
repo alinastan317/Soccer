@@ -32,7 +32,7 @@ public class League {
         
         /*
         Goal goal1 = new Goal();
-        goal1.thePlayer = currGame.homeTeam.playerArray[2];
+        goal1.thePlayer = currGame.homeTeam.playerArray[2];   
         goal1.theTeam = currGame.homeTeam;
         goal1.theTime = 55;
         
