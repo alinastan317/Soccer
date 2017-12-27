@@ -21,52 +21,13 @@ public class League {
         Team[] theTeams = theLeague.createTeams();
         Game[] theGames = theLeague.createGames(theTeams);
        
-        Game currGame = theGames[0];       
-        //currGame.playGame(3);
         for (Game currGame : theGames){
             currGame.playGame();
-            break;
+            //break;
             System.out.println(currGame.getDescription());
         }
-            theLeague.showBestTeam(theTeams);
-        
-        /*
-        Goal goal1 = new Goal();
-        goal1.thePlayer = currGame.homeTeam.playerArray[2];   
-        goal1.theTeam = currGame.homeTeam;
-        goal1.theTime = 55;
-        
-        Goal[] theGoals = {goal1};
-        currGame.goals = theGoals;
-        
-        System.out.println("Goal scored after " + 
-        currGame.goals[0].theTime + " min by " + 
-        currGame.goals[0].thePlayer.playerName + " of " + 
-        currGame.goals[0].theTeam.teamName);  */    
-        
-        //System.out.println(currGame.goals[0].thePlayer.playerName);
-       /* 
-        System.out.println("--- Searching for %Rob% ---");
-        for(Player thePlayer : team2.playerArray){
-            if (thePlayer.playerName.matches(".*Rob.*")){
-                System.out.println ("Found similar name: " + thePlayer.playerName);
-                System.out.println ("Last name is: " + thePlayer.playerName.split(" ")[1]);
-                }
-            }
-        System.out.println("--- Team 1 Players ---");
-        StringBuilder familyNameFirst = new StringBuilder();
-        
-        for (Player thePlayer : team1.playerArray) {
-            String name[] = thePlayer.playerName.split(" ");
-            //System.out.println (thePlayer.playerName);
-            familyNameFirst.append(name[1]);
-            familyNameFirst.append(" ");
-            familyNameFirst.append(name[0]);
-            System.out.println(familyNameFirst);
-            familyNameFirst.delete(0, familyNameFirst.length());
-        }
-        */
-  
+        theLeague.showBestTeam(theTeams);
+         
     }//main
     
     public Team[] createTeams (){
@@ -104,7 +65,7 @@ public class League {
     
     public void showBestTeam(Team[] theTeams){
         Team currBestTeam = theTeams[0];
-        System.out.println("/nTeam Points");
+        System.out.println("\nTeam Points");
         for(Team currTeam : theTeams){
             System.out.println(currTeam.getTeamName() + ":" + currTeam.getPointsTotal());
             if (currTeam.getPointsTotal() > currBestTeam.getPointsTotal()) {
