@@ -23,12 +23,10 @@ public class League {
        
         for (Game currGame : theGames){
             currGame.playGame();
-            //break;
             System.out.println(currGame.getDescription());
         }
-        theLeague.showBestTeam(theTeams);
-         
-    }//main
+        theLeague.showBestTeam(theTeams);  
+    }
     
     public Team[] createTeams (){
         //team1
@@ -57,9 +55,7 @@ public class League {
     public Game[] createGames (Team[] theTeams){
         Game theGame = new Game(theTeams[0], theTeams[1]);
         Game theGame2 = new Game(theTeams[1], theTeams[0]);
-        Game theGame3 = new Game(theTeams[0], theTeams[1]);
-        Game theGame4 = new Game(theTeams[1], theTeams[0]);
-        Game[] theGames = {theGame, theGame2, theGame3, theGame4};
+        Game[] theGames = {theGame, theGame2};
         return theGames;
     }       
     
@@ -76,8 +72,9 @@ public class League {
                     currBestTeam = currTeam;
                 }
             }
-        System.out.println("The winner of the league is " + currBestTeam.getTeamName() + currTeam.getGoalsTotal());
-        }
+        }    
+        System.out.println("The winner of the league is " + currBestTeam.getTeamName());
+        
     }
 }
     

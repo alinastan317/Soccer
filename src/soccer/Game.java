@@ -15,7 +15,6 @@ public class Game {
     private Team homeTeam;
     private Team awayTeam;
     private Goal[] goals;
-   // private GameEvent[] events;
     
     public Game(){}
     public Game(Team homeTeam, Team awayTeam){
@@ -64,17 +63,7 @@ public class Game {
         this.goals = goals;
     }
        
-    /*public void playGame(int maxGoals){
-        int numberOfGoals = (int) (Math.random() * (maxGoals + 1));
-        //System.out.println(numberOfGoals);
-        
-        Goal[] theGoals = new Goal[numberOfGoals];
-        //System.out.println(theGoals.length);
-        this.setGoals(theGoals);
-        GameUtils.addGameGoals(currGame);
-    }*/
     public void playGame(){
-        // playGame(6);
         ArrayList <Goal> eventList = new ArrayList();
         Goal currEvent;
         for (int i=0; i < 90; i++){
@@ -84,7 +73,6 @@ public class Game {
                 currEvent.setThePlayer(currEvent.getTheTeam().getPlayerArray()[(int)(Math.random()*currEvent.getTheTeam().getPlayerArray().length)]);
                 currEvent.setTheTime(i);
                 eventList.add(currEvent);  
-                //System.out.println(i); 
             }
             this.goals = new Goal[eventList.size()];
             eventList.toArray(goals);
@@ -114,22 +102,21 @@ public class Game {
             returnString.append(" of ");
             returnString.append(currGoal.getTheTeam().getTeamName());
             returnString.append("\n");
-            
+        }    
         if (homeTeamGoals == awayTeamGoals){
             returnString.append("It's a draw!");
             this.homeTeam.incPointsTotal(1);
             this.awayTeam.incPointsTotal(1);
         }
         else if (homeTeamGoals > awayTeamGoals){
-            returnString.append(homeTeam.getTeamName() + " win");
+            returnString.append(homeTeam.getTeamName() + " win!");
             homeTeam.incPointsTotal(2);
         }
         else {
-            returnString.append(awayTeam.getTeamName() + " win");
+            returnString.append(awayTeam.getTeamName() + " win!");
             awayTeam.incPointsTotal(2);
         }
-        returnString.append(homeTeam.getTeamName() + " vs " + awayTeam.getTeamName() + "\n");
-    }
+    
         return returnString.toString();
     }
 
